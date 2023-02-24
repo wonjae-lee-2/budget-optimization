@@ -1,0 +1,17 @@
+name: budget-optimization
+services:
+  dev:
+    image: budget-optimization-dev:latest
+    build:
+      context: .
+      dockerfile: Dockerfile/dev.Dockerfile
+    volumes:
+      - type: bind
+        source: /home/ubuntu/workspaces/budget-optimization
+        target: /home/ubuntu/budget-optimization
+    tty: true
+  prod:
+    image: budget-optimization-prod:latest
+    build:
+      context: .
+      dockerfile: Dockerfile/prod.Dockerfile

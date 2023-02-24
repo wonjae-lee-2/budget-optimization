@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "budget-optimization"
+version = "0.0.1"
+authors = [
+  { name="Wonjae Lee", email="wonjae.lee.2@gmail.com" },
+]
+description = ""
+readme = "README.md"
+requires-python = "==3.11"
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pytest==7.2.1",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/wonjae-lee-2/budget-optimization"
+"Bug Tracker" = "https://github.com/wonjae-lee-2/budget-optimization/issues"
+
+[tool.hatch.build]
+exclude = [
+  "compose.yaml",
+  "/Dockerfile",
+  "/tmp",
+]
+
+[tool.pytest.ini_options]
+pythonpath = "src"
